@@ -1,4 +1,4 @@
-const generateHTML = rquire('./src/generateHTML');
+const createHTML = require('./src/generateHTML');
 
 const Employee = require('./lib/Employee');
 const Engineer = require('./lib/Engineer');
@@ -144,7 +144,7 @@ const writeFile = data => {
 addManager()
     .then(addEmployee)
     .then(teamArray => {
-        return generateHTML(teamArray);
+        return createHTML(teamArray);
     })
     .then(pageHTML => {
         return writeFile(pageHTML);
