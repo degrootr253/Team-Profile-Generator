@@ -83,6 +83,7 @@ const addEmployee = () => {
         {
             type: 'input',
             name: 'github',
+            when: (input) => input.role === "Engineer",
             message: 'Please enter the employees Github'
 
         },
@@ -90,7 +91,7 @@ const addEmployee = () => {
             type: 'input',
             name: 'school',
             when: (input) => input.role === 'Intern',
-            message: 'Please enter the employees ID',
+            message: 'Please enter previous school.',
 
         },
         {
@@ -113,7 +114,7 @@ const addEmployee = () => {
                 console.log(employee);
 
             } else if (role === "Intern") {
-                employee = new Intern(name, id, email, github, school);
+                employee = new Intern(name, id, email, school);
 
                 console.log(employee);
 
